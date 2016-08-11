@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="org.flagz" module="flagz" revision="2.2.0" status="release" publication="20160811135542">
+		<license name="MIT License" url="https://github.com/sbt/sbt-assembly/blob/master/LICENSE"/>
+		<description>
+		flagz
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		
+		
+		
+		
+		<conf name="sources" visibility="public" description=""/>
+		<conf name="docs" visibility="public" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		
+	</configurations>
+	<publications>
+		<artifact name="flagz" type="pom" ext="pom" conf="pom"/>
+		<artifact name="flagz" type="jar" ext="jar" conf="compile"/>
+		<artifact name="flagz" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+	</publications>
+	<dependencies>
+		
+		
+		<dependency org="junit" name="junit" rev="4.12" conf="test->default(compile)"/>
+		<dependency org="org.mockito" name="mockito-all" rev="1.10.19" conf="test->default(compile)"/>
+		<dependency org="org.reflections" name="reflections" rev="0.9.10" conf="compile->default(compile)"/>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.14" conf="compile->default(compile)"/>
+		<dependency org="org.slf4j" name="slf4j-simple" rev="1.7.14" conf="test->default(compile)"/>
+		<dependency org="com.novocode" name="junit-interface" rev="0.11" conf="test->default(compile)"/>
+	</dependencies>
+</ivy-module>
